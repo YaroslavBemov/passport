@@ -34,7 +34,7 @@ Route::group([
             'prefix' => 'programs',
             'as' => 'programs::'
         ], function () {
-            //TODO controller and then routes
+            //TODO Program routes
             //Route::get('/', [ArticleController::class, 'index'])->name('index');
         });
     });

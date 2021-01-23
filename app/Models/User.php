@@ -46,4 +46,3 @@ class User extends Authenticatable
         return $this->belongsToMany(Journal::class);
     }
 }
-

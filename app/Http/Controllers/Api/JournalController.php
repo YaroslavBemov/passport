@@ -83,3 +83,4 @@ class JournalController extends Controller
         //
     }
 }
+//TODO Journal controller

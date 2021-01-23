@@ -9,8 +9,11 @@ class Program extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name'
+    ];
+
     public function journal() {
         return $this->hasMany(Journal::class);
     }
 }
-//TODO Program model

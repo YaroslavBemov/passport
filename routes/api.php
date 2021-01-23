@@ -31,12 +31,20 @@ Route::group([
             ->middleware('api.superAdmin');
         Route::post('/logout', [ApiAuthController::class, 'logout'])->name('logout.api');
 
+//TODO Program routes
         Route::group([
             'prefix' => 'programs',
             'as' => 'programs::'
         ], function () {
-            //TODO Program routes
+
             //Route::get('/', [ArticleController::class, 'index'])->name('index');
         });
+//TODO Journal routes
+            Route::group([
+                'prefix' => 'journals',
+                'as' => 'journals::'
+            ], function () {
+
+            });
     });
 });

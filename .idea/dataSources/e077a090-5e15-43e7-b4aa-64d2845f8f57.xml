@@ -1448,8 +1448,8 @@ APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTI
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <index id="402" parent="304" name="users_email_unique">
-      <ColNames>email</ColNames>
+    <index id="402" parent="304" name="users_name_unique">
+      <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
@@ -1458,9 +1458,9 @@ APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTI
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="404" parent="304" name="users_email_unique">
-      <ColNames>email</ColNames>
-      <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
+    <key id="404" parent="304" name="users_name_unique">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>users_name_unique</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

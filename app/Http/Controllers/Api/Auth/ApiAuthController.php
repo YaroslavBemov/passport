@@ -42,7 +42,7 @@ class ApiAuthController extends Controller
             ['password' => bcrypt($request->password)]
         ));
 
-        $response = ['message' => 'You were successfully registered. Use your email and password to sign in.'];
+        $response = ['message' => 'You were successfully registered. Use your name and password to sign in.'];
 
         return response($response, 200);
     }
@@ -75,7 +75,7 @@ class ApiAuthController extends Controller
 //            return response($response, 422);
 //        }
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('name', 'password');
 
         if (!Auth::attempt($credentials)) {
             $response = [

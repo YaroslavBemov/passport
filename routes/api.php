@@ -27,7 +27,8 @@ Route::group([
         'middleware' => 'auth:api'
     ],
         function () {
-        Route::post('/register', [ApiAuthController::class, 'register'])->name('register.api')->middleware('api.superAdmin');
+        Route::post('/register', [ApiAuthController::class, 'register'])->name('register.api')
+            ->middleware('api.superAdmin');
         Route::post('/logout', [ApiAuthController::class, 'logout'])->name('logout.api');
 
         Route::group([

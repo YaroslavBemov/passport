@@ -21,6 +21,21 @@ class CreateJournalsTable extends Migration
             $table->unsignedBigInteger('creator_id');
             $table->unsignedBigInteger('fixer_id');
             $table->timestamps();
+            $table->foreign('program_id')
+                ->references('id')
+                ->on('programs')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+            $table->foreign('creator_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+            $table->foreign('fixer_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
         });
     }
 

@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
     use HasFactory;
+
+    public function journal() {
+        return $this->hasMany(Journal::class);
+    }
 }
 //TODO Program model

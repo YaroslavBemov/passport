@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Journal extends Model
 {
     use HasFactory;
+
+    public function program() {
+        return $this->belongsTo(Program::class);
+    }
+
+    public function user() {
+        return $this->belongsToMany(User::class);
+    }
 }

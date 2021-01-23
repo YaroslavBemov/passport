@@ -22,7 +22,7 @@ class ProgramFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'ERVA.467444.010'
+            'name' => 'ERVA.' . mt_rand(000000, 999999) . '.' . mt_rand(000, 999)
         ];
     }
 }

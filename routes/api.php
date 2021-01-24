@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\Auth\ApiAuthController;
-use \App\Http\Controllers\Api\ArticleController;
+use \App\Http\Controllers\Api\ProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +37,7 @@ Route::group([
             'as' => 'programs::'
         ], function () {
 
-            //Route::get('/', [ArticleController::class, 'index'])->name('index');
+            Route::get('/', [ProgramController::class, 'index'])->name('index');
         });
 //TODO Journal routes
             Route::group([

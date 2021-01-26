@@ -21,30 +21,33 @@ Route::group([
     'middleware' => ['cors', 'json.response']
 ],
     function () {
-    Route::post('/login', [ApiAuthController::class, 'login'])->name('login.api');
+        Route::post('/login', [ApiAuthController::class, 'login'])->name('login.api');
 
-    Route::group([
-        'middleware' => 'auth:api'
-    ],
-        function () {
-        Route::post('/register', [ApiAuthController::class, 'register'])->name('register.api')
-            ->middleware('api.superAdmin');
-        Route::post('/logout', [ApiAuthController::class, 'logout'])->name('logout.api');
+        Route::group([
+            'middleware' => 'auth:api'
+        ],
+            function () {
+                Route::post('/register', [ApiAuthController::class, 'register'])->name('register.api')
+                    ->middleware('api.superAdmin');
+                Route::post('/logout', [ApiAuthController::class, 'logout'])->name('logout.api');
 
 //TODO Program routes
-        Route::group([
-            'prefix' => 'programs',
-            'as' => 'programs::'
-        ], function () {
+                Route::group([
+                    'prefix' => 'programs',
+                    'as' => 'programs::'
+                ], function () {
 
-            Route::get('/', [ProgramController::class, 'index'])->name('index');
-        });
+                    Route::get('/', [ProgramController::class, 'index'])->name('index');
+                });
 //TODO Journal routes
-            Route::group([
-                'prefix' => 'journals',
-                'as' => 'journals::'
-            ], function () {
+                Route::group([
+                    'prefix' => 'journals',
+                    'as' => 'journals::'
+                ], function () {
 
+                });
             });
     });
-});
+
+Route::get('programs', [ProgramController::class, 'index']);
+Route::get('programs/{id}', [ProgramController::class, 'show'])->middleware('json.response');

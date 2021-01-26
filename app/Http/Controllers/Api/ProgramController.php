@@ -45,9 +45,9 @@ class ProgramController extends Controller
      * @param  \App\Models\Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function show(Program $program)
+    public function show(Program $id)
     {
-        //
+        return Program::find($id)->first();
     }
 
     /**

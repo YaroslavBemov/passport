@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Programs from './pages/Programs'
 import Journal from './pages/Journal'
 import Nav from './components/Nav'
+import Loader from "./components/Loader";
 
 const App = () => {
     const user = true
@@ -12,6 +13,7 @@ const App = () => {
         !user ?
             <div>
                 <Login/>
+                {/*<Loader/>*/}
             </div>
             :
             <BrowserRouter>

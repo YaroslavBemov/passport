@@ -1,0 +1,19 @@
+.btn 
+    padding: 20px 40px
+    
+    color: $my-gray
+    background-color: $my-dark
+    border-radius: $radius
+    box-shadow: $outer-shadow
+    border: none
+    cursor: pointer
+    transition: all 0.3s
+
+    &:active, .btn:focus 
+        color: $my-blue
+        box-shadow: $inner-shadow
+        outline: none
+
+    &:hover
+        transform: scale(1.02)
+        color: $my-blue

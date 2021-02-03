@@ -10,6 +10,10 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@babel/cli": "^7.12.13",
+        "@babel/core": "^7.12.13",
+        "@babel/plugin-proposal-class-properties": "^7.12.13",
+        "@babel/plugin-syntax-class-properties": "^7.12.13",
         "@babel/preset-react": "^7.0.0",
         "axios": "^0.21",
         "bootstrap": "^4.0.0",
@@ -24,5 +28,9 @@
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
+    },
+    "dependencies": {
+        "mobx": "^6.1.4",
+        "mobx-react-lite": "^3.2.0"
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Journal = () => {
+const Journal = ({match}) => {
+    console.log(match)
     return (
         <div>
             <div className="program-add">

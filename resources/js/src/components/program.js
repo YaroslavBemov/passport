@@ -1,12 +1,14 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const Program = () => {
+const Program = ({data}) => {
+
     return (
         <li className="list__item item">
-            <a href="#" className="item__link">
-                <span className="item__name programs__column">ERVA.467444.010</span>
-                <span className="item__status programs__column">0</span>
-            </a>
+            <Link to={'/programs/' + data.id} className="item__link">
+                <span className="item__name programs__column">{data.name}</span>
+                <span className="item__status programs__column">{data.id}</span>
+            </Link>
         </li>
     )
 }

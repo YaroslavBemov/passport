@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Journal;
+use App\Models\Program;
 use Illuminate\Http\Request;
 
 class JournalController extends Controller
@@ -41,12 +43,12 @@ class JournalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Journal  $journal
+     * @param Program $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Journal $journal)
+    public function show($id)
     {
-        //
+        return Journal::where('program_id', $id)->get();
     }
 
     /**

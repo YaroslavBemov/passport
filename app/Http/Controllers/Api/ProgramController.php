@@ -42,7 +42,7 @@ class ProgramController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Program  $program
+     * @param Program $id
      * @return \Illuminate\Http\Response
      */
     public function show(Program $id)

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\Auth\ApiAuthController;
 use \App\Http\Controllers\Api\ProgramController;
+use \App\Http\Controllers\Api\JournalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,5 @@ Route::group([
 
 Route::get('programs', [ProgramController::class, 'index']);
 Route::get('programs/{id}', [ProgramController::class, 'show'])->middleware('json.response');
+//{id} is program id
+Route::get('journals/{id}', [JournalController::class, 'show'])->middleware('json.response');

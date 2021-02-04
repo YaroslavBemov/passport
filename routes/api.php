@@ -55,3 +55,5 @@ Route::get('programs', [ProgramController::class, 'index']);
 Route::get('journals/{id}', [JournalController::class, 'show'])->middleware('json.response');
 
 Route::post('programs', [ProgramController::class, 'store'])->middleware('json.response');
+
+Route::post('journals/{id}', [JournalController::class, 'store'])->middleware('json.response');

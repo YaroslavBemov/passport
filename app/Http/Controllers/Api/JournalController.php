@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\JournalsRequest;
 use App\Models\Journal;
 use App\Models\Program;
 use Illuminate\Http\Request;
@@ -32,12 +33,19 @@ class JournalController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param JournalsRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(JournalsRequest $request)
     {
-        //
+        //TODO finish here
+        $id = $request->post('id');
+        $journal = Journal::find($id);
+        $journal->fill($request->all())->save();
+
+//        $id = $request->post('id');
+//        $news = $id ? News::find($id) : new News();
+//        $news->fill($request->all())->save();
     }
 
     /**

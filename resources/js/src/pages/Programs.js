@@ -12,6 +12,22 @@ const Programs = observer(() => {
             ProgramsStore.getPrograms()
         }, [])
 
+        // const sortByUpdate = (a, b) => {
+        //     const bandA = a.updated_at
+        //     const bandB = b.updated_at
+        //
+        //     let comparison = 0
+        //     if (bandA > bandB) {
+        //         comparison = -1
+        //     } else if (bandA < bandB) {
+        //         comparison = 1
+        //     }
+        //     return comparison
+        //
+        // }
+
+        const progs = ProgramsStore.programsFiltered
+
         return (
             <React.Fragment>
                 <Search/>
@@ -22,11 +38,11 @@ const Programs = observer(() => {
                         : <div className="programs">
                             <div className="programs__head">
                                 <span className="programs__name programs__column">Название</span>
-                                <span className="programs__status programs__column"></span>
+                                {/*<span className="programs__status programs__column"></span>*/}
                             </div>
                             <ul className="programs__list list">
                                 {
-                                    ProgramsStore.programs.map(item =>
+                                    progs.map(item =>
                                         <Program data={item} key={item.id}/>
                                     )
                                 }

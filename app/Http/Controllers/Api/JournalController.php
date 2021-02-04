@@ -38,10 +38,11 @@ class JournalController extends Controller
      */
     public function store(JournalsRequest $request)
     {
-        //TODO finish here
+
         $id = $request->post('id');
+
         $journal = Journal::find($id);
-        $journal->fill($request->all())->save();
+        $journal->fill($request->only('chip', 'remark'))->save();
 
 //        $id = $request->post('id');
 //        $news = $id ? News::find($id) : new News();

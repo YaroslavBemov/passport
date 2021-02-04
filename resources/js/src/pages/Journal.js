@@ -25,7 +25,10 @@ const Journal = observer(({match}) => {
                         className="input chip__input"
                         placeholder="Компонент"
                         value={chip}
-                        onChange={event => setChip(event.target.value)}
+                        onChange={event => {
+                            setChip(event.target.value)
+                            console.log(chip)
+                        }}
                     />
                     <input
                         type="text"
@@ -36,7 +39,7 @@ const Journal = observer(({match}) => {
                     />
                     <button
                         className="btn add__btn"
-                        onClick={() => ProgramsStore.setJournal(id, data)}
+                        onClick={() => ProgramsStore.setJournal(id, {chip, remark})}
                     >Добавить
                     </button>
                 </div>
@@ -59,7 +62,7 @@ const Journal = observer(({match}) => {
                                             </div>
                                             <button className="btn item__done">Done</button>
                                             <button className="btn item__edit">Edit</button>
-                                            <button className="btn item__delet">Delete</button>
+                                            <button className="btn item__delete">Delete</button>
                                         </li>
                                     )
                                 }

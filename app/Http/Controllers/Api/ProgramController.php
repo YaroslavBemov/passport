@@ -41,6 +41,10 @@ class ProgramController extends Controller
 
         $program->fill($request->only('name'))->save();
 
+        $lastInsertId = $program->id;
+
+        return response()->json(array($program));
+
         //        $id = $request->post('id');
 //
 //        $news = $id ? News::find($id) : new News();

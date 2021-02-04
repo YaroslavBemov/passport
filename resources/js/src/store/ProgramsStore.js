@@ -3,6 +3,7 @@ import axios from 'axios'
 
 class ProgramsStore {
     programs = []
+    programsFiltered = []
     program = {}
     journals = []
     loading = false
@@ -12,10 +13,13 @@ class ProgramsStore {
     }
 
     getPrograms = async () => {
-        this.loading = true
-        const response = await axios('http://passport/api/programs')
-        this.programs = [...response.data]
-        this.loading = false
+        if (this.programs.length === 0) {
+            this.loading = true
+            const response = await axios('http://passport/api/programs')
+            this.programs = [...response.data]
+            this.programsFiltered = [...response.data]
+            this.loading = false
+        }
     }
 
     getProgram = async id => {
@@ -33,7 +37,19 @@ class ProgramsStore {
 
     setProgram = async name => {
         await axios.post('http://passport/api/programs', {name: name})
-            .then(response => console.log(response))
+            .then(response => {
+                this.programs = [...this.programs, ...response.data]
+
+                // this.programs.push(this.programs).unshift(response.data)
+
+                // this.programs.unshift(response.data)
+                // this.programs.unshift({
+                //     id: response.data.id,
+                //     name,
+                //     created_at: response.data.created_at,
+                //     updated_at: response.data.updated_at
+                // })
+            })
             .catch(e => console.log(e))
     }
 

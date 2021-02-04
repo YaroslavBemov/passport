@@ -51,6 +51,7 @@ Route::group([
     });
 
 Route::get('programs', [ProgramController::class, 'index']);
-Route::get('programs/{id}', [ProgramController::class, 'show'])->middleware('json.response');
 //{id} is program id
 Route::get('journals/{id}', [JournalController::class, 'show'])->middleware('json.response');
+
+Route::post('programs', [ProgramController::class, 'store'])->middleware('json.response');

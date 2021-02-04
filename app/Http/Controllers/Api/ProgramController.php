@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\ProgramsRequest;
 use App\Models\Program;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class ProgramController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(ProgramsRequest $request)
     {
         //
     }
@@ -36,7 +37,19 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $program = new Program();
+
+        $program->fill($request->only('name'))->save();
+
+        //        $id = $request->post('id');
+//
+//        $news = $id ? News::find($id) : new News();
+//        $news->fill($request->all())->save();
+//
+//        return redirect()->route('admin::news::update', [
+//            'id' => $news->id,
+//            'isAdmin' => true
+//        ])->withInput();
     }
 
     /**

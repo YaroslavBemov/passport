@@ -30,6 +30,12 @@ class ProgramsStore {
         this.journals = [...response.data]
         this.loading = false
     }
+
+    setProgram = async name => {
+        await axios.post('http://passport/api/programs', {name: name})
+            .then(response => console.log(response))
+            .catch(e => console.log(e))
+    }
 }
 
 export default new ProgramsStore()

@@ -22,7 +22,7 @@ const Programs = observer(() => {
                         : <div className="programs">
                             <div className="programs__head">
                                 <span className="programs__name programs__column">Название</span>
-                                <span className="programs__status programs__column">Статус</span>
+                                <span className="programs__status programs__column"></span>
                             </div>
                             <ul className="programs__list list">
                                 {

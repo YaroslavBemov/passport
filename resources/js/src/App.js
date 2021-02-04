@@ -20,8 +20,8 @@ const App = observer(() => {
                 <BrowserRouter>
                     <Nav/>
                     <Switch>
-                        <Route path={'/api/programs'} exact component={Programs}/>
-                        <Route path={'/api/programs/:id'} component={Journal}/>
+                        <Route path={'/programs'} exact component={Programs}/>
+                        <Route path={'/programs/:id'} component={Journal}/>
                     </Switch>
                 </BrowserRouter>
         )

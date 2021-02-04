@@ -23,7 +23,7 @@ const Programs = observer(() => {
                         {
                             ProgramsStore.programs.map(item =>
                                 <li className="list__item item" key={item.id}>
-                                    <Link to={'/api/programs/' + item.id} className="item__link">
+                                    <Link to={'/programs/' + item.id} className="item__link">
                                         <span className="item__name programs__column">{item.name}</span>
                                         <span className="item__status programs__column">{item.id}</span>
                                     </Link>

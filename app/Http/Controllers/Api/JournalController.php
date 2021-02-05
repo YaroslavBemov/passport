@@ -36,7 +36,7 @@ class JournalController extends Controller
      * @param JournalsRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(JournalsRequest $request)
+    public function store(Request $request)
     {
 
         $id = $request->post('id');

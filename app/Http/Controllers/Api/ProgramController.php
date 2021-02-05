@@ -24,7 +24,7 @@ class ProgramController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(ProgramsRequest $request)
+    public function create(Request $request)
     {
         //
     }
@@ -41,7 +41,7 @@ class ProgramController extends Controller
 
         $program->fill($request->only('name'))->save();
 
-        $lastInsertId = $program->id;
+//        $lastInsertId = $program->id;
 
         return response()->json(array($program));
 

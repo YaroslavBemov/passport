@@ -36,13 +36,22 @@ class JournalController extends Controller
      * @param JournalsRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
+//        $journal = new Journal();
+//        $journal->fill($request->only('program_id', 'chip', 'remark'));
+//        $journal->program_id = $request->program_id;
+//        $journal->chip = $request->chip;
+//        $journal->remark = $request->remark;
+//        $journal->creator_id = 2;
+//        $journal->fixer_id = 2;
 
-        $id = $request->post('id');
+//        $journal->save();
 
-        $journal = Journal::find($id);
-        $journal->fill($request->only('chip', 'remark'))->save();
+
+        return response($id);
+
+
 
 //        $id = $request->post('id');
 //        $news = $id ? News::find($id) : new News();
@@ -63,7 +72,7 @@ class JournalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Journal  $journal
+     * @param \App\Models\Journal $journal
      * @return \Illuminate\Http\Response
      */
     public function edit(Journal $journal)
@@ -74,8 +83,8 @@ class JournalController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Journal  $journal
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Journal $journal
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Journal $journal)
@@ -86,7 +95,7 @@ class JournalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Journal  $journal
+     * @param \App\Models\Journal $journal
      * @return \Illuminate\Http\Response
      */
     public function destroy(Journal $journal)

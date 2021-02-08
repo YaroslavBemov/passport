@@ -53,8 +53,8 @@ class ProgramsStore {
             .catch(e => console.log(e))
     }
 
-    setJournal = async (id, data) => {
-        await axios.post('http://passport/api/journals/' + id, {data})
+    setJournal = async (id, chip, remark) => {
+        await axios.post('http://passport/api/journals/' + id, {chip, remark})
             .then(response => console.log(response))
             .catch(e => console.log(e))
     }

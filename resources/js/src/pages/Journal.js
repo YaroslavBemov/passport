@@ -7,15 +7,10 @@ const Journal = observer(({match}) => {
         const id = match.params.id
         const [chip, setChip] = useState('')
         const [remark, setRemark] = useState('')
-        const [data, setData] = useState({})
 
         useEffect(() => {
             ProgramsStore.getJournals(id)
         }, [])
-
-        useEffect(() => {
-            setData({chip, remark})
-        }, [chip, remark])
 
         return (
             <div>
@@ -39,7 +34,7 @@ const Journal = observer(({match}) => {
                     />
                     <button
                         className="btn add__btn"
-                        onClick={() => ProgramsStore.setJournal(id, {chip, remark})}
+                        onClick={() => ProgramsStore.setJournal(id, chip, remark)}
                     >Добавить
                     </button>
                 </div>

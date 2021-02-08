@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Api\JournalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::post('/journals/{id}', [JournalController::class, 'store'])->middleware('json.response');
 
 Route::any('{query}',
     function() { return redirect('/'); })

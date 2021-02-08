@@ -38,24 +38,13 @@ class JournalController extends Controller
      */
     public function store(Request $request, $id)
     {
-//        $journal = new Journal();
-//        $journal->fill($request->only('program_id', 'chip', 'remark'));
-//        $journal->program_id = $request->program_id;
-//        $journal->chip = $request->chip;
-//        $journal->remark = $request->remark;
-//        $journal->creator_id = 2;
-//        $journal->fixer_id = 2;
+        $journal = new Journal();
+        $journal->fill($request->all());
+        $journal->program_id = $id;
 
-//        $journal->save();
+        $journal->save();
 
-
-        return response($id);
-
-
-
-//        $id = $request->post('id');
-//        $news = $id ? News::find($id) : new News();
-//        $news->fill($request->all())->save();
+        return response($journal);
     }
 
     /**

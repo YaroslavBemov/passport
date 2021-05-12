@@ -1,4 +1,4 @@
-import {makeAutoObservable} from 'mobx'
+import {makeAutoObservable, runInAction} from 'mobx'
 import axios from 'axios'
 
 class ProgramsStore {
@@ -16,9 +16,12 @@ class ProgramsStore {
         if (this.programs.length === 0) {
             this.loading = true
             const response = await axios('http://passport/api/programs')
-            this.programs = [...response.data]
-            this.programsFiltered = [...response.data]
-            this.loading = false
+
+            runInAction(()=>{
+                this.programs = [...response.data]
+                this.programsFiltered = [...response.data]
+                this.loading = false
+            })
         }
     }
 
